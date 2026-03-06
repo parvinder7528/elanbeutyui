@@ -21,7 +21,7 @@ const hairSpaServices = [
       {
         name: "Regents Park",
         duration: "60+ Minutes",
-        price: 120,
+        price: 80,
       },
       {
         name: "Nundah",
@@ -46,7 +46,7 @@ const hairSpaServices = [
       {
         name: "Regents Park",
         duration: "90+ Minutes",
-        price: 150,
+        price: 95,
       },
       {
         name: "Nundah",

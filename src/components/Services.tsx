@@ -42,7 +42,7 @@ const Services = () => {
         Book Your Appointment
       </button>
       <button className="inline-flex items-center justify-center font-medium transition-all duration-300 whitespace-nowrap cursor-pointer bg-white text-rose-800 border-2 border-rose-800 hover:bg-rose-50 px-8 py-4 text-lg rounded-lg transform hover:scale-105">
-        Call Us: (07) 3000 0000
+        Call Us:+61 420988668 , +61 401788668 (Regents Park & Nundah)
       </button>
     </div>
   </div>
