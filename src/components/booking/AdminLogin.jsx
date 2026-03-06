@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Eye, EyeOff, Sparkles } from "lucide-react";
 import { toast } from "sonner";
 import API from "../../api/api"; // Axios instance
-import loginBg from "../../assets/download.jpeg";
+import loginBg from "../../assets/elanragent.jpeg";
 
 const AdminLogin = () => {
   const navigate = useNavigate();
@@ -53,7 +53,7 @@ const AdminLogin = () => {
       <div className="absolute inset-0 bg-black/50"></div>
 
       {/* Form */}
-      <div className="relative w-full max-w-md bg-white/10 backdrop-blur-md rounded-xl p-8 shadow-lg z-10">
+      <div style={{background:"rgb(0 0 0 / 76%)"}} className=" relative w-full max-w-md  backdrop-blur-md rounded-xl p-8 shadow-lg z-10">
         {/* Mobile logo */}
         <div className="lg:hidden text-center mb-6">
           <Sparkles className="w-10 h-10 mx-auto text-primary mb-2" />
@@ -106,7 +106,7 @@ const AdminLogin = () => {
           </Button>
         </form>
 
-        <p className="text-center text-sm text-gray-200 mt-6">
+        <p className="text-center text-sm text-white mt-6">
           Need help?{" "}
           <a href="mailto:support@elanbeauty.com" className="text-primary hover:underline">
             support@elanbeauty.com

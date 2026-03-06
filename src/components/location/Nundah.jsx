@@ -11,7 +11,291 @@ import image6 from "../../assets/exterior2.jpg"
 import image7 from "../../assets/DOS04593.jpg"
 import image8 from "../../assets/interior.jpg"
 import BookingSection from "../booking/BookingSection";
+import ServicesCard from "../servicesCard/serviceCard";
+const services = [
+  // === SPA PEDICURE ===
+  {
+    name: "E'lan Regular Pedicure",
+    category: "Spa Pedicure",
+    duration: "30-35 mins",
+    price: 50,
+    description: "ENJOY OUR REJUVENATING ELAN PEDICURES DESIGNED TO INVIGORATE & REFRESH YOUR FEET:",
+   features: [
+        "Sea salt for relaxation",
+        "Expert cuticle removal",
+        "Buffing and shaping",
+        "Callus removal",
+        "Relaxation massage for feet and lower legs",
+        "Hydrating softener cream",
+        "Regular polish included"
+      ]
+  },
 
+
+  {
+    name: "E'lan Premium Pedicure",
+    category: "Spa Pedicure",
+    duration: "45-50 mins",
+    price: 70,
+    description: "INDULGE IN OUR. LUXURIOUS ELAN LUXURY PEDICURE,A LAVISH TREATMENT TO PAMPER YOUR FEET:",
+    features: [
+      "Pink sea salt soak for relaxation",
+        "Natural fruit and flower soak",
+        "Expert cuticle removal",
+        "Buffing and shaping",
+        "Exfoliating scrubs and callus removal",
+        "Steam treatment for deep cleaning",
+        "Feet and legs mask for ultimate hydration",
+        "Relaxation massage with candle oil",
+        "Nourishing moisture",
+        "Regular polish included"
+    ],
+  },
+  // Pedicure Additional Services
+  { name: "French Tip (Toes)", category: "Pedicure Add-ons", price: 15 },
+  { name: "Buffing, Shape & Shellac/Gel Only on Toes", category: "Pedicure Add-ons", price: 35 },
+  { name: "Take Off Shellac/Gel on Toes (Single Service)", category: "Pedicure Add-ons", price: 15 },
+   { name: " Shellac/Gel Polish", category: "Pedicure Add-ons", price: 15 },
+
+  // === MANICURE ===
+  {
+    name: "E'lan Classic Manicure",
+    category: "Manicure",
+    duration: "25-30 mins",
+    price: 45,
+    description: "REVEL 1N OUR SIGNATURE ELAN MAN ICURE, METICULOUSLY CRAFTED TO PERFECTION;",
+    features: [
+     "Softener Soak To Nourish Your Skin",
+	      "Expert Cuticle Removal For A Clean Finish",
+	  "Precise Buffing, Shaping, And Cuticle Oil Application",
+	  "Relaxation Massage To Soothe Tired Hands",
+  "Hydrating Softener Cream",
+	"Polish Included For A Flawless Finish"
+    ],
+  },
+
+  {
+    name: "E'lan Premium Manicure",
+    category: "Manicure",
+    duration: "45-50 mins",
+    price: 65,
+    description: "PAMPER YOURSELF WITH OURELAN LUXURY MANICURE. AN INDULGENT EXPERIENCE FEATURING!:",
+    features: [
+  "Fruit & flowers soak to soothe and refresh",
+	"Expert cuticle removal and meticulous shaping" ,
+   "Buffing, Shaping and Cuticle oil application ",
+   "Exfoliating hand mask for rejuvenated skin ",
+   " Nourishing C moisturizer",
+ "Polish included fora perfect finish",
+ "Hand Mask for deep hydration",
+	"Relaxation massage with candle oil"
+    ],
+  },
+  // Manicure Additional Services
+  { name: "French Tip (Nails)", category: "Manicure Add-ons", price: 15 },
+  { name: "Buffing, Shape & Shellac/Gel Only on Nails", category: "Manicure Add-ons", price: 35 },
+  { name: "Take Off Shellac/Gel on Nails (Single Service)", category: "Manicure Add-ons", price: 15 },
+     { name: " Shellac/Gel Polish", category: "Manicure Add-ons", price: 15 },
+
+
+  // === ACRYLIC EXTENSIONS ===
+  {
+    name: "Full Set Acrylic Extensions with Polish",
+    category: "Acrylic Extensions Nails",
+    price: 60,
+    description: "Achieve stunning acrylic nails with our full set extension service, including polish:",
+    features: [
+      "Customized acrylic extension application",
+      "Expert shaping and length customization",
+      "Choice of polish colour",
+    ],
+  },
+
+
+
+  {
+    name: "Overlay on Natural Nails with Polish",
+    category: "Acrylic Extensions Nails",
+    price: 55,
+    description: "Enhance the natural beauty of your nails with an acrylic overlay, including polish:",
+    features: [
+      "Overlay application on natural nails",
+      "Expert shaping and polishing",
+    ],
+  },
+
+
+
+
+  {
+    name: "Acrylic Refill",
+    category: "Acrylic Extensions Nails",
+    price: 45,
+    description: "Maintain the beauty of your acrylic nails with our refill service:",
+    note: "Price may vary based on growth",
+    features: [
+      "Re-balancing of acrylic overlay",
+      "Shaping and polishing",
+    ],
+  },
+  // Acrylic Additional Services
+  { name: "Shellac/Gel Polish", category: "Acrylic Add-ons", price: 15 },
+    { name: "French Tip", category: "Acrylic Add-ons", price: 15 },
+  { name: "Designer Nail (Each)", category: "Acrylic Add-ons", price: 5 },
+  { name: "Soak Off Acrylic Nails", category: "Acrylic Add-ons", price: 25 },
+  { name: "Take Off Acrylic Nails", category: "Acrylic Add-ons", price: 20 },
+  { name: "1-2 Nails Fix", category: "Acrylic Add-ons", price: 5 },
+  { name: "3-4 Nails Fix", category: "Acrylic Add-ons", price: 10 },
+  { name: "XL Length", category: "Acrylic Add-ons", price: 5 },
+  { name: "XXL Length", category: "Acrylic Add-ons", price: 10 },
+
+  // === GEL BUILDER ===
+  {
+    name: "Gel Builder Extension with Polish",
+    category: "Gel Builder",
+    price: 75,
+    description: "Get beautiful gel builder extensions with a polish finish:",
+    features: [
+      "Customized gel builder extension application",
+      "Expert shaping and length customization",
+      "Choice of polish color",
+    ],
+  },
+  {
+    name: "Gel Builder Overlay on Natural Nails with Polish",
+    category: "Gel Builder",
+    price: 70,
+    description: "Enhance the natural beauty of your nails with an overlay, including polish:",
+    features: [
+      "Overlay application on natural nails",
+      "Expert shaping and polishing",
+    ],
+  },
+  {
+    name: "Gel Builder Refill",
+    category: "Gel Builder",
+    price: 60,
+    description: "Maintain the beauty of your gel builder nails with our refill service:",
+    features: [
+      "Re-balancing of gel builder overlay",
+      "Shaping and polishing",
+    ],
+  },
+  // Gel Builder Additional Services
+  { name: "Shellac/Gel Polish", category: "Gel Builder Add-ons", price: 15 },
+  { name: "1-2 Nail Fix", category: "Gel Builder Add-ons", price: 5 },
+  { name: "French Tip", category: "Gel Builder Add-ons", price: 15 },
+  { name: "3-4 Nail Fix", category: "Gel Builder Add-ons", price: 10 },
+  { name: "Designer Nail (Each)", category: "Gel Builder Add-ons", price: 5 },
+  { name: "XL Length", category: "Gel Builder Add-ons", price: 5 },
+  { name: "Soak Off Gel Builder", category: "Gel Builder Add-ons", price: 25 },
+  { name: "XXL Length", category: "Gel Builder Add-ons", price: 10 },
+
+  // === SNS POWDER ===
+  {
+    name: "SNS Full Set Extension",
+    category: "SNS Powder",
+    price: 75,
+    description: "Achieve flawless nails with our full set of SNS powder extensions.",
+  },
+  {
+    name: "SNS Overlay on Natural Nails with Polish",
+    category: "SNS Powder",
+    price: 70,
+    description: "Enhance the natural beauty of your nails with SNS overlay, including polish.",
+  },
+ 
+  // SNS Additional Services
+  { name: "Shellac/Gel Polish", category: "SNS Add-ons", price: 15 },
+  { name: "1-2 Nail Fix", category: "SNS Add-ons", price: 5 },
+  { name: "French Tip", category: "SNS Add-ons", price: 15 },
+  { name: "3-4 Nail Fix", category: "SNS Add-ons", price: 10 },
+  { name: "Designer Nail (Each)", category: "SNS Add-ons", price: 5 },
+  { name: "XL Length", category: "SNS Add-ons", price: 5 },
+  { name: "Soak Off SNS", category: "SNS Add-ons", price: 25 },
+  { name: "XXL Length", category: "SNS Add-ons", price: 10 },
+
+  // === GEL X ===
+  {
+    name: "Gel X Extensions",
+    category: "Gel X",
+    price: 75,
+    description: "Get stunning Gel X extensions for your nails:",
+    features: ["Application of Gel X extensions"],
+  },
+ 
+  // Gel X Additional Services
+  { name: "Shellac/Gel Polish", category: "Gel X Add-ons", price: 15 },
+  { name: "1-2 Nail Fix", category: "Gel X Add-ons", price: 5 },
+  { name: "French Tip", category: "Gel X Add-ons", price: 15 },
+  { name: "3-4 Nail Fix", category: "Gel X Add-ons", price: 10 },
+  { name: "Designer Nail (Each)", category: "Gel X Add-ons", price: 5 },
+  { name: "XL Length", category: "Gel X Add-ons", price: 5 },
+  { name: "Soak Off Gel X", category: "Gel X Add-ons", price: 25 },
+  { name: "XXL Length", category: "Gel X Add-ons", price: 10 },
+
+  // === INDULGE HAIR SPA ===
+  {
+    name: "Indulge Hair Spa Classic",
+    category: "Indulge Hair Spa",
+    duration: "50 mins",
+    price: 80,
+    description: "A classic hair spa experience:",
+    features: [
+      "Washing your face and applying eye herbs to relieve stress and treat under-eye dark circles",
+      "Massage and acupressure to relax the head",
+      "Neck, shoulder, and nape massage",
+      "Washing your hair twice",
+      "Hair care and head massage",
+      "Hair drying and hair serum application",
+    ],
+  },
+
+
+
+  {
+    name: "Indulge Hair Spa Advance",
+    category: "Indulge Hair Spa",
+    duration: "75 mins",
+    price: 95,
+    description: "Includes all features of the Classic pack, plus:",
+    features: [
+      "Meridian clearance in the head, head massage, and relaxation acupressure",
+      "Application of eye herbs to relieve stress and treat dark circles",
+      "Facial cleansing and face lifting massage with our exclusive massage cream",
+      "Moisturizing face mask",
+      "Hand, neck, and shoulder massage",
+    ],
+  },
+  {
+    name: "Classic",
+    category: "Indulge Hair Spa",
+    duration: "50 mins",
+    price: 120,
+    features: [
+      "Washing your face and applying eye herbs to relieve stress and treat under-eye dark circles.",
+      "Massage and acupressure to relax the head.",
+      "Neck, shoulder, and nape massage.",
+      "Washing your hair twice.",
+      "Hair care and head massage.",
+      "Hair drying and hair serum application.",
+    ],
+  },
+  {
+    name: "Advance",
+    category: "Indulge Hair Spa",
+    duration: "75 mins",
+    price: 150,
+    features: [
+      "Includes all features of the Shampoo Relaxation Pack, plus:",
+      "Meridian clearance in the head, head massage, and relaxation acupressure.",
+      "Application of eye herbs to relieve stress and treat dark circles.",
+      "Facial cleansing and face lifting massage with our exclusive massage cream.",
+      "Moisturizing face mask.",
+      "Hand, neck, and shoulder massage.",
+    ],
+  },
+];
 const Nundah = () => {
   const navigate = useNavigate()
 
@@ -133,147 +417,8 @@ const Nundah = () => {
               designed to enhance your natural radiance.
             </p>
           </div>
-
-          <div className="space-y-12">
-            {/* ================= SPA & AESTHETICS ================= */}
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-              <div className="bg-[#c69c7e] px-8 py-6">
-                <h3 className="text-2xl font-serif text-white">
-                  Spa &amp; Aesthetics
-                </h3>
-              </div>
-
-              <div className="p-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-                {[
-                  ["Signature Facial", "60 min", "$120"],
-                  ["Anti-Aging Treatment", "75 min", "$150"],
-                  ["Hydrating Facial", "45 min", "$95"],
-                  ["Deep Cleansing Facial", "60 min", "$110"],
-                ].map(([title, time, price], i) => (
-                  <div
-                    key={i}
-                    className="flex justify-between items-center p-4 border border-gray-100 rounded-lg hover:bg-[#f4ece6] transition"
-                  >
-                    <div>
-                      <h4 className="font-medium text-gray-800">{title}</h4>
-                      <p className="text-sm text-gray-600">{time}</p>
-                    </div>
-                    <p className="font-semibold text-[#c69c7e]">{price}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-
-            {/* ================= NAILS ================= */}
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-              <div className="bg-[#c69c7e] px-8 py-6">
-                <h3 className="text-2xl font-serif text-white">Nails</h3>
-              </div>
-
-              <div className="p-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-                {[
-                  ["Gel Manicure", "45 min", "$45"],
-                  ["Gel Pedicure", "60 min", "$55"],
-                  ["Nail Art", "30 min", "$25"],
-                  ["French Manicure", "45 min", "$50"],
-                ].map(([title, time, price], i) => (
-                  <div
-                    key={i}
-                    className="flex justify-between items-center p-4 border border-gray-100 rounded-lg hover:bg-[#f4ece6] transition"
-                  >
-                    <div>
-                      <h4 className="font-medium text-gray-800">{title}</h4>
-                      <p className="text-sm text-gray-600">{time}</p>
-                    </div>
-                    <p className="font-semibold text-[#c69c7e]">{price}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* ================= HEAD SPA ================= */}
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-              <div className="bg-[#c69c7e] px-8 py-6">
-                <h3 className="text-2xl font-serif text-white">Head Spa</h3>
-              </div>
-
-              <div className="p-8 space-y-10">
-                {/* HEAD SPA EXPERIENCE */}
-                <div className="border border-gray-100 rounded-xl p-6 hover:bg-[#f4ece6] transition">
-                  <div className="flex justify-between items-center mb-3">
-                    <h4 className="text-xl font-semibold text-gray-800">
-                      Head Spa Classic
-                    </h4>
-                    <span className="text-2xl font-bold text-[#c69c7e]">
-                      $120*
-                    </span>
-                  </div>
-                  <p className="text-sm text-gray-600 mb-4">60 min</p>
-
-                  <h5 className="font-medium text-gray-800 mb-2">
-                    Treatment Includes:
-                  </h5>
-                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-gray-600">
-                    <li>
-                      • Washing Your Face & Applying Eye Herbs (Stress Relief &
-                      Dark Circles Treatment)
-                    </li>
-                    <li>• Massage & Acupressure to Relax the Head</li>
-                    <li>• Neck, Shoulder & Nape Massage</li>
-                    <li>• Washing Your Hair Twice</li>
-                    <li>• Hair Care & Head Massage</li>
-                    <li>• Hair Drying & Hair Serum Application</li>
-                  </ul>
-
-                  <p className="text-xs text-gray-500 italic mt-3">
-                    *Additional charges may apply for long hair from $20
-                  </p>
-                </div>
-
-                {/* HEAD SPA PREMIUM */}
-                <div className="border border-gray-100 rounded-xl p-6 hover:bg-[#f4ece6] transition">
-                  <div className="flex justify-between items-center mb-3">
-                    <h4 className="text-xl font-semibold text-gray-800">
-                      Head Spa Advance
-                    </h4>
-                    <span className="text-2xl font-bold text-[#c69c7e]">
-                      $150*
-                    </span>
-                  </div>
-                  <p className="text-sm text-gray-600 mb-4">90 min</p>
-
-                  <h5 className="font-medium text-gray-800 mb-2">
-                    Treatment Includes:
-                  </h5>
-                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-gray-600">
-                    <li>
-                      • Includes All Features of the Shampoo Relaxation Pack,
-                      Plus
-                    </li>
-                    <li>
-                      • Meridian Clearance in the Head, Head Massage &
-                      Relaxation Acupressure
-                    </li>
-                    <li>
-                      • Application of Eye Herbs to Relieve Stress & Treat Dark
-                      Circles
-                    </li>
-                    <li>
-                      • Facial Cleansing & Face Lifting Massage with Our
-                      Exclusive Massage Cream
-                    </li>
-                    <li>• Moisturizing Face Mask</li>
-                    <li>• Hand, Neck & Shoulder Massage</li>
-                  </ul>
-
-                  <p className="text-xs text-gray-500 italic mt-3">
-                    *Additional charges may apply for long hair from $20
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+   <ServicesCard services={services}/>
+          
         </div>
       </section>
       <section className="py-20 bg-white">

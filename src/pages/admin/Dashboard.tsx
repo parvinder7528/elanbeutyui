@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
-import { Users, DollarSign, Calendar, TrendingUp, Clock, Star, ArrowUpRight, MoreHorizontal, Sparkles } from "lucide-react";
+import { Users, DollarSign, Calendar, TrendingUp, Clock, Star, ArrowUpRight, MoreHorizontal, Sparkles, ArrowDownRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import API from "../../api/api";
 // const stats = [

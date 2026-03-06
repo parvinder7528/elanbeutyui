@@ -75,7 +75,7 @@ const Footer = () => {
                   Services
                 </a>
               </li>
-                            <li>
+              <li>
                 <a
                   href="/head-spa"
                   className="text-gray-600 hover:text-rose-500 transition-colors"
@@ -134,15 +134,15 @@ const Footer = () => {
           </div>
         </div>
         <div className="border-t border-rose-200 pt-8 flex flex-col md:flex-row justify-between items-center">
-     <a
-  href="https://calendly.com/marketixminddigital/new-meeting"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="text-gray-600 text-sm mb-4 md:mb-0 hover:text-rose-500 hover:underline transition"
->
- ©️ 2024 E'LAN BEAUTY. All rights reserved. Developed by Maketix Mind.
-</a>
-
+          <a
+            href="https://marketixmind.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-600 text-sm mb-4 md:mb-0 hover:text-rose-500 hover:underline transition"
+          >
+            ©️ 2024 E'LAN BEAUTY. All rights reserved. Developed by Maketix Mind.
+          </a>
+          {/* 
           <div className="flex space-x-6 text-sm">
             <a
               href="#"
@@ -162,7 +162,7 @@ const Footer = () => {
             >
               Website Builder
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

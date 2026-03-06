@@ -8,7 +8,7 @@ import { faPhone, faClock } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate, NavLink } from "react-router-dom";
 import image1 from "../assets/interior.jpg"
 import image2 from "../assets/Nails1.jpg"
-import image3 from "../assets/exterior2.jpg"
+import image3 from "../assets/elanragent.jpeg"
 import image4 from "../assets/interior1.jpg"
 import image5 from "../assets/DOS04474.jpg"
 import image6 from "../assets/DOS04480.jpg"
@@ -27,41 +27,83 @@ const Hero = () => {
     navigate("/contact");
   };
   const testimonials = [
-    {
-      name: "Sarah Mitchell",
-      service: "Spa & Aesthetics",
-      quote:
-        "E'LAN Beauty has completely transformed my self-care routine. The attention to detail and luxurious atmosphere make every visit feel like a retreat.",
-      rating: 5,
-    },
-    {
-      name: "Emma Thompson",
-      service: "Hair Beauty",
-      quote:
-        "My wedding day look was absolutely perfect. They understood my vision completely and made me feel like a queen.",
-      rating: 5,
-    },
-    {
-      name: "Rachel Williams",
-      service: "Makeover",
-      quote:
-        "The makeover session was transformative! I felt so confident and beautiful. They exceeded my expectations.",
-      rating: 5,
-    },
-    {
-      name: "Charlotte Davies",
-      service: "Head Spa",
-      quote:
-        "Pure relaxation combined with visible results. My hair has never been healthier.",
-      rating: 5,
-    },
-    {
-      name: "Jessica Brown",
-      service: "Nails",
-      quote:
-        "The nail artistry here is exceptional. Every detail is perfect and long lasting.",
-      rating: 5,
-    },
+ {
+  name: "Abinaya Krishnan",
+  image: "https://randomuser.me/api/portraits/women/21.jpg",
+  rating: 5,
+  time: "2 months ago",
+  quote:
+    "I had a wonderful experience. The staff were patient and listened carefully to what I wanted. The nail artist made a genuine effort to recreate the reference I showed her. The whole process was professional and the finish was perfect. The mocktails were a lovely touch too.",
+  services: "Gel manicures",
+},
+{
+  name: "E W",
+  image: "https://randomuser.me/api/portraits/women/45.jpg",
+  rating: 5,
+  time: "4 months ago",
+  quote:
+    "I cannot speak highly enough of the beautiful ladies at Elan Nails and Head Spa. Their service and experience is above and beyond. Our daughter loved her luxury pedicure as did I. If I could give 10 stars I would.",
+  services: "Hand & foot massages, Pedicure, Exfoliation",
+},
+{
+  name: "Jilly Foster",
+  image: "https://randomuser.me/api/portraits/women/55.jpg",
+  rating: 5,
+  time: "a week ago",
+  quote:
+    "I had the most amazing experience at Elan Nails and Head Spa. The service was professional, relaxing and so thorough. The attention to detail was incredible and the whole space felt clean and calming. I left feeling completely refreshed and pampered.",
+  services: "Head spa",
+},
+{
+  name: "Merisa S",
+  image: "https://randomuser.me/api/portraits/women/33.jpg",
+  rating: 5,
+  time: "a month ago",
+  quote:
+    "I had a 70 minute head spa. I was greeted as soon as I walked in and offered a wide range of hot or cold beverages. The salon is beautiful and the products smelled amazing.",
+  services: "Head spa",
+},
+{
+  name: "Brittany Jade",
+  image: "https://randomuser.me/api/portraits/women/12.jpg",
+  rating: 5,
+  time: "5 months ago",
+  quote:
+    "Got my wedding nails done here and the girls were absolutely lovely. The nails look fantastic and I’m so glad I came here. They took their time and constantly checked that everything was perfect.",
+  services: "Wedding nails, Nail shaping, Nail colours",
+},
+{
+  name: "Tammy Owens-Place",
+  image: "https://randomuser.me/api/portraits/women/60.jpg",
+  rating: 5,
+  time: "2 weeks ago",
+  quote:
+    "Very friendly staff from the moment I opened the door. Very informative about the wide range of services and the atmosphere was amazing with a mocktail menu and drinks available.",
+  services: "Salon services",
+},
+{
+  name: "Mana Faifai",
+  image: "https://randomuser.me/api/portraits/women/70.jpg",
+  rating: 5,
+  time: "3 weeks ago",
+  quote:
+    "Amazing experience. It was my first time having a head spa and I was not disappointed. The staff were brilliant, professional and very gentle. You even get a complimentary drink.",
+  services: "Head spa",
+},
+{
+  name: "Shannon Lynn",
+  image: "https://randomuser.me/api/portraits/women/48.jpg",
+  rating: 5,
+  time: "5 months ago",
+  quote:
+    "Absolutely lovely service when I went today. I took myself, my grandma and my younger sister. They looked after us and gave us drinks. Would 100% recommend to anyone.",
+  services: "Manicure, Gel manicures",
+},
+    
+
+
+
+    
   ];
 
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -331,170 +373,7 @@ const Hero = () => {
 
       {/* service  */}
 
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="font-serif text-4xl md:text-5xl text-gray-800 mb-4">
-              Our Signature Services
-            </h2>
-            <div className="w-24 h-px bg-rose-400 mx-auto mb-6" />
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Discover our comprehensive range of beauty and wellness services,
-              each designed to enhance your natural elegance.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {/* Spa & Aesthetics */}
-            <div className="group cursor-pointer overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="relative overflow-hidden">
-                <img
-                  alt="Spa & Aesthetics"
-                  className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
-                  src={image2}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
-              <div className="p-6 bg-white">
-                <h3 className="font-serif text-xl text-gray-800 mb-3">
-                  Spa &amp; Aesthetics
-                </h3>
-                <p className="text-gray-600 mb-4 leading-relaxed">
-                  Rejuvenating treatments that restore your skin's natural
-                  radiance and vitality.
-                </p>
-                <a
-                  href="/services"
-                  className="text-rose-500 font-medium hover:text-rose-600 transition-colors inline-flex items-center"
-                >
-                  Explore Service
-                  <FontAwesomeIcon icon={faArrowRight} className="ml-2" />
-                </a>
-              </div>
-            </div>
-
-            {/* Hair Beauty */}
-            <div className="group cursor-pointer overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="relative overflow-hidden">
-                <img
-                  alt="Hair Beauty"
-                  className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
-                  src={image3}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
-              <div className="p-6 bg-white">
-                <h3 className="font-serif text-xl text-gray-800 mb-3">
-                  Hair Spa
-                </h3>
-                <p className="text-gray-600 mb-4 leading-relaxed">
-                  Transformative styling and treatments that celebrate your
-                  unique beauty.
-                </p>
-                <a
-                  href="/services"
-                  className="text-rose-500 font-medium hover:text-rose-600 transition-colors inline-flex items-center"
-                >
-                  Explore Service
-                  <FontAwesomeIcon icon={faArrowRight} className="ml-2" />
-                </a>
-              </div>
-            </div>
-
-            {/* Nails */}
-            <div className="group cursor-pointer overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="relative overflow-hidden">
-                <img
-                  alt="Nails"
-                  className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
-                  src="https://readdy.ai/api/search-image?query=luxury%20nail%20salon%20with%20elegant%20manicure%20station%2C%20professional%20nail%20artist%20working%2C%20beautiful%20nail%20art%20designs%2C%20sophisticated%20nail%20care%20environment%20with%20soft%20lighting&width=600&height=400&seq=service3&orientation=landscape"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
-              <div className="p-6 bg-white">
-                <h3 className="font-serif text-xl text-gray-800 mb-3">Nails</h3>
-                <p className="text-gray-600 mb-4 leading-relaxed">
-                  Exquisite nail artistry and care that adds the perfect
-                  finishing touch.
-                </p>
-                <a
-                  href="/services"
-                  className="text-rose-500 font-medium hover:text-rose-600 transition-colors inline-flex items-center"
-                >
-                  Explore Service
-                  <FontAwesomeIcon icon={faArrowRight} className="ml-2" />
-                </a>
-              </div>
-            </div>
-
-            {/* Head Spa */}
-            <div className="group cursor-pointer overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="relative overflow-hidden">
-                <img
-                  alt="Head Spa"
-                  className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
-                  src={image1}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
-              <div className="p-6 bg-white">
-                <h3 className="font-serif text-xl text-gray-800 mb-3">
-                  Head Spa
-                </h3>
-                <p className="text-gray-600 mb-4 leading-relaxed">
-                  Deeply relaxing scalp treatments that soothe your mind and
-                  nourish your hair.
-                </p>
-                <a
-                  href="/services"
-                  className="text-rose-500 font-medium hover:text-rose-600 transition-colors inline-flex items-center"
-                >
-                  Explore Service
-                  <FontAwesomeIcon icon={faArrowRight} className="ml-2" />
-                </a>
-              </div>
-            </div>
-
-
-          </div>
-
-          <div style={{ textAlign: "center" }}>
-            <a
-              href="/services"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                justifyContent: "center",
-                padding: "16px 32px",
-                fontSize: "18px",
-                fontWeight: 500,
-                color: "#ffffff",
-                textDecoration: "none",
-                whiteSpace: "nowrap",
-                borderRadius: "12px",
-                cursor: "pointer",
-                background: "linear-gradient(90deg, #6b3e2e, #4b2a1f)",
-                boxShadow: "0 8px 24px rgba(75, 42, 31, 0.35)",
-                transition: "all 0.3s ease",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background =
-                  "linear-gradient(90deg, #4b2a1f, #6b3e2e)";
-                e.currentTarget.style.boxShadow =
-                  "0 12px 32px rgba(75, 42, 31, 0.5)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background =
-                  "linear-gradient(90deg, #6b3e2e, #4b2a1f)";
-                e.currentTarget.style.boxShadow =
-                  "0 8px 24px rgba(75, 42, 31, 0.35)";
-              }}
-            >
-              View All Services
-            </a>
-          </div>
-        </div>
-      </section>
+ 
 
       {/* locations  */}
       <section
@@ -519,7 +398,7 @@ const Hero = () => {
                   <img
                     alt="E'LAN BEAUTY Regents Park"
                     className="w-full h-96 object-cover"
-                    src="https://static.readdy.ai/image/42cabbbc9f59707019254de677c0f30c/288ff7b101761e639351b80c505979b6.png"
+                    src={image3}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                 </div>
@@ -792,8 +671,11 @@ const Hero = () => {
               <div className="flex">
                 {testimonials.map((item, index) => (
                   <div key={index} className="flex-[0_0_100%] px-4">
-                    <div className="bg-white rounded-xl shadow-lg p-8 mx-auto max-w-2xl">
+                    <div className="bg-white rounded-xl shadow-lg p-8 mx-auto max-w-2xl ">
                       {/* Stars */}
+                     <div className="flex justify-center items-center">
+                       <img src={item.image} width={50} height={50} className="rounded-[100%] text-center " alt="" />
+                     </div>
                       <div className="flex justify-center mb-4">
                         {Array.from({ length: item.rating }).map((_, i) => (
                           <Star
@@ -814,7 +696,7 @@ const Hero = () => {
                           {item.name}
                         </h4>
                         <p className="text-rose-500 font-medium">
-                          {item.service}
+                          {item.services}
                         </p>
                       </div>
                     </div>
@@ -930,7 +812,7 @@ const Hero = () => {
               <a href="tel:+61401788668" className="text-rose-500 font-medium hover:underline">
                 +61 401788668
               </a>
-<br/>
+               <br/>
               <a href="tel:+61420988668" className="text-rose-500 font-medium hover:underline">
                 +61 420988668
               </a>

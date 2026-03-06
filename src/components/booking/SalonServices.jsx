@@ -74,11 +74,11 @@ export default function SalonServices() {
                           <span>{service.duration}</span>
                         </div>
                       </div>
-                      <div className="text-right">
+                      {/* <div className="text-right">
                         <div className="text-2xl md:text-3xl font-bold text-rose-600">
                           ${service.price}
                         </div>
-                      </div>
+                      </div> */}
                     </div>
 
                     <div className="space-y-3">
@@ -114,9 +114,9 @@ export default function SalonServices() {
                       <span className="text-gray-700 font-medium">
                         {item.name}
                       </span>
-                      <span className="text-rose-600 font-bold">
+                      {/* <span className="text-rose-600 font-bold">
                         ${item.price}
-                      </span>
+                      </span> */}
                     </div>
                   ))}
                 </div>
@@ -154,11 +154,11 @@ export default function SalonServices() {
                           <span>{service.duration}</span>
                         </div>
                       </div>
-                      <div className="text-right">
+                      {/* <div className="text-right">
                         <div className="text-2xl md:text-3xl font-bold text-rose-600">
                           ${service.price}
                         </div>
-                      </div>
+                      </div> */}
                     </div>
 
                     <div className="space-y-3">
@@ -194,9 +194,9 @@ export default function SalonServices() {
                       <span className="text-gray-700 font-medium">
                         {item.name}
                       </span>
-                      <span className="text-rose-600 font-bold">
+                      {/* <span className="text-rose-600 font-bold">
                         ${item.price}
-                      </span>
+                      </span> */}
                     </div>
                   ))}
                 </div>
@@ -238,11 +238,11 @@ export default function SalonServices() {
                         )}
                       </div>
 
-                      <div className="text-right">
+                      {/* <div className="text-right">
                         <div className="text-2xl md:text-3xl font-bold text-rose-600">
                           ${service.price}
                         </div>
-                      </div>
+                      </div> */}
                     </div>
 
                     <div className="space-y-3">
@@ -278,9 +278,9 @@ export default function SalonServices() {
                       <span className="text-gray-700 font-medium">
                         {item.name}
                       </span>
-                      <span className="text-rose-600 font-bold">
+                      {/* <span className="text-rose-600 font-bold">
                         ${item.price}
-                      </span>
+                      </span> */}
                     </div>
                   ))}
                 </div>
@@ -322,11 +322,11 @@ export default function SalonServices() {
                         )}
                       </div>
 
-                      <div className="text-right">
+                      {/* <div className="text-right">
                         <div className="text-2xl md:text-3xl font-bold text-rose-600">
                           ${service.price}
                         </div>
-                      </div>
+                      </div> */}
                     </div>
 
                     <div className="space-y-3">
@@ -362,9 +362,9 @@ export default function SalonServices() {
                       <span className="text-gray-700 font-medium">
                         {item.name}
                       </span>
-                      <span className="text-rose-600 font-bold">
+                      {/* <span className="text-rose-600 font-bold">
                         ${item.price}
-                      </span>
+                      </span> */}
                     </div>
                   ))}
                 </div>
@@ -396,11 +396,11 @@ export default function SalonServices() {
                           {service.title}
                         </h3>
                       </div>
-                      <div className="text-right">
+                      {/* <div className="text-right">
                         <div className="text-2xl md:text-3xl font-bold text-rose-600">
                           ${service.price}
                         </div>
-                      </div>
+                      </div> */}
                     </div>
 
                     <div className="space-y-3">
@@ -433,7 +433,7 @@ export default function SalonServices() {
                       className="flex justify-between items-center p-4 bg-gray-50 rounded-lg hover:bg-rose-50 transition-colors duration-300"
                     >
                       <span className="text-gray-700 font-medium">{item.name}</span>
-                      <span className="text-rose-600 font-bold">${item.price}</span>
+                      {/* <span className="text-rose-600 font-bold">${item.price}</span> */}
                     </div>
                   ))}
                 </div>
@@ -472,11 +472,11 @@ export default function SalonServices() {
                         )}
                       </div>
 
-                      <div className="text-right">
+                      {/* <div className="text-right">
                         <div className="text-2xl md:text-3xl font-bold text-rose-600">
                           ${service.price}
                         </div>
-                      </div>
+                      </div> */}
                     </div>
 
                     <div className="space-y-3">
@@ -509,7 +509,7 @@ export default function SalonServices() {
                       className="flex justify-between items-center p-4 bg-gray-50 rounded-lg hover:bg-rose-50 transition-colors duration-300"
                     >
                       <span className="text-gray-700 font-medium">{item.name}</span>
-                      <span className="text-rose-600 font-bold">${item.price}</span>
+                      {/* <span className="text-rose-600 font-bold">${item.price}</span> */}
                     </div>
                   ))}
                 </div>
@@ -541,12 +541,12 @@ export default function SalonServices() {
                           {service.title}
                         </h3>
                       </div>
-
+{/* 
                       <div className="text-right">
                         <div className="text-2xl md:text-3xl font-bold text-rose-600">
                           {service.priceLabel}
                         </div>
-                      </div>
+                      </div> */}
                     </div>
 
                     <div className="space-y-3">
@@ -597,11 +597,11 @@ export default function SalonServices() {
                           <span>{service.duration}</span>
                         </div>
                       </div>
-                      <div className="text-right">
+                      {/* <div className="text-right">
                         <div className="text-2xl md:text-3xl font-bold text-rose-600">
                           {service.price}
                         </div>
-                      </div>
+                      </div> */}
                     </div>
 
                     <div className="space-y-3">

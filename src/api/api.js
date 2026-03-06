@@ -11,9 +11,11 @@ import axios from "axios";
 
 
 const API = axios.create({
-  baseURL: "https://elanbeauty.com.au/",
+  baseURL: "https://elanbeauty.com.au",
   // baseURL: "http://localhost:5000",
-
+headers:{
+  "Authorization":"Bearer "+localStorage.getItem("authToken") || ""
+}
   
 });
 
