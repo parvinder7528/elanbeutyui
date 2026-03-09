@@ -39,6 +39,7 @@ const AdminSidebar = () => {
 
   const handleLogout = () => {
     toast.success("Logged out successfully");
+    localStorage.removeItem("authToken")
     navigate("/admin");
   };
 

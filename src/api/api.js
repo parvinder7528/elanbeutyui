@@ -9,14 +9,21 @@ import axios from "axios";
 
 // export default API;
 
-
 const API = axios.create({
   baseURL: "https://elanbeautyapi.onrender.com",
-  // baseURL: "http://localhost:5000",
-headers:{
-  "Authorization":"Bearer "+localStorage.getItem("authToken") || ""
-}
-  
 });
+
+API.interceptors.request.use(
+  (config) => {
+    const token = localStorage.getItem("authToken");
+    if (token) {
+      config.headers["Authorization"] = "Bearer " + token;
+    }
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
 
 export default API;

@@ -36,14 +36,12 @@ const Dashboard = () => {
       default: return "bg-muted text-muted-foreground";
     }
   };
-
-  useEffect(() => {
-    const fetchDashboardData = async () => {
+ const fetchDashboardData = async () => {
       try {
         const [recentRes, topRes, statsRes] = await Promise.allSettled([
           API.get("/api/recent-bookings"),
           API.get("/api/top-bookings"),
-          API.get("/api/dashboard-stats"), // ✅ added
+          API.get("/api/dashboard-stats"), 
         ]);
 
         // =========================
@@ -57,7 +55,7 @@ const Dashboard = () => {
         // =========================
         // Top Bookings
         // =========================
-        let topData;
+        let topData:any;
         if (topRes.status === "fulfilled") {
           topData = topRes.value?.data;
         }
@@ -109,6 +107,7 @@ const Dashboard = () => {
                   : "In Progress",
           };
         });
+        console.log("=======<ooo")
 
         const formattedTop = topData?.data.map((item: any) => ({
           name: item._id,
@@ -125,6 +124,7 @@ const Dashboard = () => {
         setLoading(false);
       }
     };
+  useEffect(() => {
 
     fetchDashboardData();
   }, []);
@@ -199,7 +199,7 @@ const Dashboard = () => {
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              {recentBookings.map((booking) => (
+              {recentBookings?.map((booking) => (
                 <div key={booking.id} className="flex items-center justify-between p-4 rounded-xl bg-secondary/30 hover:bg-secondary/50 transition-colors">
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
@@ -233,7 +233,7 @@ const Dashboard = () => {
           <CardHeader className="pb-2"><CardTitle className="font-display text-xl font-bold">Top Services</CardTitle></CardHeader>
           <CardContent>
             <div className="space-y-5">
-              {topServices.map((service, index) => (
+              {topServices?.map((service, index) => (
                 <div key={service.name} className="space-y-2">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
