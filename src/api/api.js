@@ -8,9 +8,11 @@ import axios from "axios";
 // });
 
 // export default API;
-
+// https://elanbeautyflow.vercel.app/
 const API = axios.create({
-  baseURL: "https://elanbeautyapi.onrender.com",
+  // baseURL: "https://elanbeautyapi.onrender.com",
+    baseURL: "https://elanbeautyflow.vercel.app",
+
 });
 
 API.interceptors.request.use(
