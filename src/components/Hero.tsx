@@ -421,10 +421,10 @@ const Hero = () => {
                   </div>
                 </div>
                 <div className="mb-8">
-                  <h4 className="font-semibold text-gray-800 mb-3">
+                  {/* <h4 className="font-semibold text-gray-800 mb-3">
                     Featured Services:
-                  </h4>
-                  <ul className="space-y-2">
+                  </h4> */}
+                  {/* <ul className="space-y-2">
                     <li className="flex items-center justify-center lg:justify-start">
                       <i className="ri-check-line text-rose-500 mr-2" />
                       <span className="text-gray-600">
@@ -439,7 +439,7 @@ const Hero = () => {
                       <i className="ri-check-line text-rose-500 mr-2" />
                       <span className="text-gray-600">Luxury Nail Care</span>
                     </li>
-                  </ul>
+                  </ul> */}
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a
@@ -485,7 +485,7 @@ const Hero = () => {
                     <p className="text-gray-700 text-lg">Closes at 8:00 PM</p>
                   </div>
                 </div>
-                <div className="mb-8">
+                {/* <div className="mb-8">
                   <h4 className="font-semibold text-gray-800 mb-3">
                     Featured Services:
                   </h4>
@@ -503,7 +503,7 @@ const Hero = () => {
                       <span className="text-gray-600">Relaxation Therapy</span>
                     </li>
                   </ul>
-                </div>
+                </div> */}
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a
                     href="/locations/nundah"
@@ -810,11 +810,11 @@ const Hero = () => {
               <h3 className="font-semibold text-gray-800 mb-2">Call Us</h3>
               <p className="text-gray-600">Ready to book? Give us a call</p>
               <a href="tel:+61401788668" className="text-rose-500 font-medium hover:underline">
-                +61 401788668
+                +61 401788668 (Nundah)
               </a>
                <br/>
               <a href="tel:+61420988668" className="text-rose-500 font-medium hover:underline">
-                +61 420988668
+                +61 420988668 (Regent Park)
               </a>
        
             </div>

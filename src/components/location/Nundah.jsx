@@ -7,7 +7,7 @@ import image2 from "../../assets/DOS04599.jpg"
 import image3 from "../../assets/DOS04706.jpg"
 import image4 from "../../assets/DOS04528.jpg"
 import image5 from "../../assets/exterior4.jpg"
-import image6 from "../../assets/exterior2.jpg"
+import  nundahBenner  from "../../assets/elan beauty/nundah interior5.jpg"
 import image7 from "../../assets/DOS04593.jpg"
 import image8 from "../../assets/interior.jpg"
 import BookingSection from "../booking/BookingSection";
@@ -307,7 +307,7 @@ const Nundah = () => {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              'url("https://readdy.ai/api/search-image?query=sophisticated%20beauty%20salon%20in%20Nundah%20Queensland%2C%20modern%20luxury%20spa%20exterior%20with%20elegant%20signage%2C%20professional%20wellness%20center%20with%20contemporary%20architecture&width=1920&height=1080&seq=ndhero&orientation=landscape")',
+              `url(${nundahBenner})`,
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/40" />

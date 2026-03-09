@@ -142,22 +142,40 @@ const BookingSection = () => {
   useEffect(() => {
     setFormData((pre) => ({ ...pre, location: selectedLocation }))
   }, [location])
-  const renderInput = (label, name, type = "text") => (
-    <div>
-      <label className="block text-sm font-medium text-gray-700 mb-2">{label}</label>
+  const renderInput = (label, name, type = "text") => {
+  // Get today's date in YYYY-MM-DD format for the 'min' attribute
+  const today = new Date().toISOString().split("T")[0];
+
+  return (
+    <div className="flex flex-col gap-1">
+      <label className="block text-sm font-semibold text-gray-700 transition-colors">
+        {label}
+      </label>
+      
       <input
         type={type}
         name={name}
         value={formData[name]}
         onChange={handleChange}
-        className={`w-full px-4 py-3 border rounded-lg focus:ring-2 text-sm ${errors[name] ? "border-red-500 focus:ring-red-500" : "border-gray-300 focus:ring-rose-500"
-          }`}
+        min={type === "date" ? today : undefined}
+        className={`w-full px-4 py-3 border rounded-lg outline-none transition-all duration-200 text-sm
+          ${errors[name] 
+            ? "border-red-500 focus:ring-2 focus:ring-red-200 bg-red-50" 
+            : "border-gray-300 focus:border-rose-500 focus:ring-4 focus:ring-rose-50"
+          } 
+          ${type === "date" ? "cursor-pointer" : ""}`}
       />
-      {errors[name] && (
-        <p className="text-red-600 font-bold text-sm mt-1">{errors[name]}</p> // bold & red
-      )}
+
+      <div className="min-h-[20px]"> 
+        {errors[name] && (
+          <p className="text-red-600 font-bold text-xs flex items-center gap-1 animate-pulse">
+            <span>⚠️</span> {errors[name]}
+          </p>
+        )}
+      </div>
     </div>
   );
+};
 
   return (
     <section className="py-20 bg-white">

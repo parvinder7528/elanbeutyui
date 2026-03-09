@@ -11,9 +11,11 @@ import image5 from "../assets/DOS04474.jpg"
 import image6 from "../assets/DOS04480.jpg"
 import image7 from "../assets/DOS04707.jpg"
 
-import image8 from "../assets/DOS04599.jpg"
-import image9 from "../assets/DOS04528.jpg"
+import image8 from "../assets/elan beauty/nail nundah.jpg"
+import image10 from "../assets/elan beauty/nai nundah3.jpg"
+import image9 from "../assets/elan beauty/regent park.jpg"
 import ServicesCard from "../components/servicesCard/serviceCard.jsx"
+import regBenner from "../assets/elan beauty/regent park.jpg"
 const services = [
   // === SPA PEDICURE ===
   {
@@ -246,11 +248,11 @@ const services = [
 
   // === INDULGE HAIR SPA ===
   {
-    name: "Indulge Hair Spa Classic",
-    category: "Indulge Hair Spa",
+    name: "Indulge Head Spa Classic",
+    category: "Indulge Head Spa",
     duration: "50 mins",
-    price: 80,
-    description: "A classic hair spa experience:",
+    price: 100,
+    description: "A classic Head spa experience:",
     features: [
       "Washing your face and applying eye herbs to relieve stress and treat under-eye dark circles",
       "Massage and acupressure to relax the head",
@@ -267,7 +269,7 @@ const services = [
     name: "Indulge Hair Spa Advance",
     category: "Indulge Hair Spa",
     duration: "75 mins",
-    price: 95,
+    price: 125,
     description: "Includes all features of the Classic pack, plus:",
     features: [
       "Meridian clearance in the head, head massage, and relaxation acupressure",
@@ -288,7 +290,7 @@ const Regents = () => {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              'url("https://readdy.ai/api/search-image?query=luxury%20beauty%20salon%20in%20Regents%20Park%20Queensland%2C%20elegant%20spa%20entrance%20with%20modern%20design%2C%20sophisticated%20wellness%20center%20with%20warm%20lighting%20and%20rose%20gold%20accents&width=1920&height=1080&seq=rphero&orientation=landscape")',
+              `url(${regBenner})`,
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/40" />
@@ -483,6 +485,18 @@ const Regents = () => {
               </div>
             </div>
             <div className="break-inside-avoid cursor-pointer group">
+              <div className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                <img
+                  alt="Salon Interior"
+                  className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-110"
+                  src={image10}
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
+                  <i className="ri-zoom-in-line text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+              </div>
+            </div>
+             <div className="break-inside-avoid cursor-pointer group">
               <div className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
                 <img
                   alt="Salon Interior"

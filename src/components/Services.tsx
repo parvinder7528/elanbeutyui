@@ -37,14 +37,35 @@ const Services = () => {
       Contact us today to schedule your appointment and experience the E'LAN
       difference.
     </p>
-    <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-      <button onClick={() =>navigate("/contact")} className="inline-flex items-center justify-center font-medium transition-all duration-300 whitespace-nowrap cursor-pointer bg-gradient-to-r from-rose-700 to-rose-800 text-white hover:from-rose-800 hover:to-rose-900 shadow-lg hover:shadow-xl px-8 py-4 text-lg rounded-lg transform hover:scale-105">
-        Book Your Appointment
-      </button>
-      <button className="inline-flex items-center justify-center font-medium transition-all duration-300 whitespace-nowrap cursor-pointer bg-white text-rose-800 border-2 border-rose-800 hover:bg-rose-50 px-8 py-4 text-lg rounded-lg transform hover:scale-105">
-        Call Us:+61 420988668 , +61 401788668 (Regents Park & Nundah)
-      </button>
-    </div>
+   <div className="flex flex-col lg:flex-row gap-6 justify-center items-stretch lg:items-center px-4 py-8">
+  {/* Primary Action: Book Appointment */}
+  <button 
+    onClick={() => navigate("/contact")} 
+    className="flex-1 lg:flex-none inline-flex items-center justify-center font-bold tracking-wide transition-all duration-300 whitespace-nowrap cursor-pointer bg-gradient-to-br from-rose-600 to-rose-800 text-white hover:from-rose-700 hover:to-rose-900 shadow-md hover:shadow-rose-200/50 px-10 py-5 text-lg rounded-xl transform hover:-translate-y-1"
+  >
+    <span>📅</span>
+    <span className="ml-2">Book Your Appointment</span>
+  </button>
+
+  {/* Secondary Actions: Call Buttons Group */}
+  <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
+    <a 
+      href="tel:+61401788668"
+      className="flex-1 inline-flex items-center justify-center font-semibold transition-all duration-300 whitespace-nowrap bg-white text-rose-800 border-2 border-rose-100 hover:border-rose-800 hover:bg-rose-50 px-6 py-4 text-base rounded-xl shadow-sm hover:shadow-md transform hover:-translate-y-1"
+    >
+      <span className="mr-2">📞</span>
+      Nundah: +61 401 788 668
+    </a>
+
+    <a 
+      href="tel:+61420988668"
+      className="flex-1 inline-flex items-center justify-center font-semibold transition-all duration-300 whitespace-nowrap bg-white text-rose-800 border-2 border-rose-100 hover:border-rose-800 hover:bg-rose-50 px-6 py-4 text-base rounded-xl shadow-sm hover:shadow-md transform hover:-translate-y-1"
+    >
+      <span className="mr-2">📞</span>
+      Regents Park: +61 420 988 668
+    </a>
+  </div>
+</div>
   </div>
 </section>
 

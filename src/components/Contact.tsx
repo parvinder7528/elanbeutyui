@@ -2,6 +2,8 @@ import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import BookingSection from "./booking/BookingSection";
+import  nundahBenner  from "../assets/elan beauty/nundah exterior2.jpg"
+
 const businessData = [
   {
     id: 1,
@@ -66,7 +68,7 @@ const Contact = () => {
           <img
             alt="E'LAN BEAUTY Contact"
             className="w-full h-full object-cover object-center"
-            src="https://public.readdy.ai/ai/img_res/f2976356b31d9e42321bd4c93514dd55.jpg"
+            src= {nundahBenner}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/40" />
         </div>
@@ -166,7 +168,7 @@ const Contact = () => {
           </div>
         </div>
       </section>
-      <section className="py-20 bg-gradient-to-br from-rose-50 to-pink-50">
+      {/* <section className="py-20 bg-gradient-to-br from-rose-50 to-pink-50">
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-serif text-gray-800 mb-4">
@@ -287,7 +289,7 @@ const Contact = () => {
             </form>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <BookingSection />
 
