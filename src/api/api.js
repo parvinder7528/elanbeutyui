@@ -11,7 +11,7 @@ import axios from "axios";
 
 
 const API = axios.create({
-  baseURL: "https://api.elanbeauty.com.au",
+  baseURL: "https://elanbeautyapi.onrender.com",
   // baseURL: "http://localhost:5000",
 headers:{
   "Authorization":"Bearer "+localStorage.getItem("authToken") || ""
