@@ -34,7 +34,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               {/* Facebook Messenger */}
-              <a
+              {/* <a
                 href="#"
                 aria-label="Facebook Messenger"
                 className="w-10 h-10 bg-rose-100 rounded-full flex items-center justify-center text-rose-500 hover:bg-rose-500 hover:text-white transition-colors"
@@ -43,25 +43,25 @@ const Footer = () => {
                   icon={faFacebookMessenger}
                   className="text-[20px]"
                 />
-              </a>
+              </a> */}
 
               {/* Instagram */}
               <a
-                href="#"
+                href="https://www.instagram.com/elan_elegant_salon_aus_/"
                 aria-label="Instagram"
+                target="blank"
                 className="w-10 h-10 bg-rose-100 rounded-full flex items-center justify-center text-rose-500 hover:bg-rose-500 hover:text-white transition-colors"
               >
                 <FontAwesomeIcon icon={faInstagram} className="text-[20px]" />
               </a>
 
-              {/* YouTube */}
-              <a
+              {/* <a
                 href="#"
                 aria-label="YouTube"
                 className="w-10 h-10 bg-rose-100 rounded-full flex items-center justify-center text-rose-500 hover:bg-rose-500 hover:text-white transition-colors"
               >
                 <FontAwesomeIcon icon={faYoutube} className="text-[20px]" />
-              </a>
+              </a> */}
             </div>
           </div>
           <div>
@@ -99,14 +99,14 @@ const Footer = () => {
                   Gallery
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a
                   href="/reviews"
                   className="text-gray-600 hover:text-rose-500 transition-colors"
                 >
                   Reviews
                 </a>
-              </li>
+              </li> */}
               <li>
                 <a
                   href="/contact"

@@ -20,12 +20,12 @@ const hairSpaServices = [
     locations: [
       {
         name: "Regents Park",
-        duration: "60+ Minutes",
-        price: 80,
+        duration: "50+ Minutes",
+        price: 100,
       },
       {
         name: "Nundah",
-        duration: "60+ Minutes",
+        duration: "50+ Minutes",
         price: 120,
       },
     ],
@@ -45,12 +45,12 @@ const hairSpaServices = [
     locations: [
       {
         name: "Regents Park",
-        duration: "90+ Minutes",
-        price: 95,
+        duration: "75+ Minutes",
+        price: 125,
       },
       {
         name: "Nundah",
-        duration: "90+ Minutes",
+        duration: "75+ Minutes",
         price: 150,
       },
     ],
@@ -573,11 +573,11 @@ const Headspa = () => {
               <h3 className="font-semibold text-gray-800 mb-2">Call Us</h3>
               <p className="text-gray-600">Ready to book? Give us a call</p>
               <a href="tel:+61401788668" className="text-rose-500 font-medium hover:underline">
-                +61 401788668
+                +61 401788668 (Nundah)
               </a>
-              <br />
+               <br/>
               <a href="tel:+61420988668" className="text-rose-500 font-medium hover:underline">
-                +61 420988668
+                +61 420988668 (Regent Park)
               </a>
 
             </div>
