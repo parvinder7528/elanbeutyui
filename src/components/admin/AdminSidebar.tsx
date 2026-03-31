@@ -30,7 +30,7 @@ const menuItems = [
   { title: "Users", url: "/admin/dashboard/users", icon: Users },
   { title: "User Services", url: "/admin/dashboard/services", icon: Scissors },
   { title: "Ratings", url: "/admin/dashboard/ratings", icon: Star },
-  { title: "CMS", url: "/admin/dashboard/cms", icon: FileText },
+  // { title: "CMS", url: "/admin/dashboard/cms", icon: FileText },
 ];
 
 const AdminSidebar = () => {
