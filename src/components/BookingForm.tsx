@@ -63,7 +63,7 @@ const BookingForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!service || !location || !date || !time || !name || !email || !phone) {
+    if (!service || !location || !date || !time || !name ||  !phone) {
       toast({
         title: "Missing Information",
         description: "Please fill in all fields to complete your booking.",
