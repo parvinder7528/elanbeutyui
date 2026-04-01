@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
-import BookingSection from "./booking/BookingSection";
+import BookingSection from "./booking/BookingSection.js";
 import { useNavigate } from "react-router-dom";
 import image1 from "../assets/interior.jpg"
 import image2 from "../assets/Nails1.jpg"

@@ -4,20 +4,22 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Switch } from "@/components/ui/switch";
 import {
-  Users, DollarSign, Calendar, TrendingUp, Clock,
+  Users, DollarSign, Calendar, TrendingUp, Clock, X,  User, Briefcase,  Activity, MapPin ,
   Star, ArrowUpRight, MoreHorizontal, Sparkles,
   ArrowDownRight, MessageCircle, ChevronLeft, ChevronRight, CheckCircle2
 } from "lucide-react";
 import { useEffect, useState, useCallback } from "react";
 import API from "../../api/api";
 import { toast } from "react-toastify";
-
+import { Eye } from "lucide-react";
+import ViewBookingDetails from "@/components/viewBookingDetails";
 const Dashboard = () => {
   const [recentBookings, setRecentBookings] = useState<any[]>([]);
   const [topServices, setTopServices] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [stats, setStats] = useState<any[]>([]);
-
+  const [selectedBooking, setSelectedBooking] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   // Pagination States
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
@@ -32,27 +34,28 @@ const Dashboard = () => {
     }
   };
 
-  // const handleSendWhatsApp = (booking: any) => {
-  //   const phoneNumber = booking.phone || "";
-  //   const message = `*E'LAN BEAUTY*%0A%0AHello *${booking.client}*,%0A%0AYour booking for *${booking.service}* has been *Approved* ✅.%0A%0A📅 Date: ${booking.date}%0A⏰ Time: ${booking.time}%0A📍 Location: ${booking.stylist}%0A%0ASee you soon! ✨`;
-  //   window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
-  // };
-const handleSendWhatsApp = (booking: any) => {
-  // 1. Sirf digits rakhein (spaces, +, brackets sab hatayein)
-  let cleanPhone = booking.phone?.replace(/\D/g, '') || "";
+ const handleSendWhatsApp = (booking: any) => {
+  let phone = booking.phone || "";
 
-  // 2. Agar number '0' se start ho raha hai, toh usey hatayein
-  if (cleanPhone.startsWith('0')) {
-    cleanPhone = cleanPhone.substring(1);
+  // ✅ Remove spaces, dashes, brackets
+  phone = phone.replace(/[^\d+]/g, "");
+
+  // ✅ If number starts with + → remove + (WhatsApp needs digits only)
+  if (phone.startsWith("+")) {
+    phone = phone.substring(1);
   }
 
-  // 3. Indian Number Fix: 
-  // Agar number 91 se start nahi ho raha aur 10 digit ka hai, toh 91 add karein
-  const finalPhone = cleanPhone.startsWith('91') && cleanPhone.length > 10 
-    ? cleanPhone 
-    : `91${cleanPhone}`;
+  // ❌ DO NOT force 91 here
 
-const messageText = 
+  // ⚠️ If number is local (10 digits), assume India (fallback)
+  if (phone.length === 10) {
+    phone = `91${phone}`;
+  }
+
+  // ✅ Final phone (E.164 format without +)
+  const finalPhone = phone;
+
+  const messageText =
     `ELAN BEAUTY\n\n` +
     `Hello ${booking.client},\n\n` +
     `Your booking for ${booking.service} has been successfully APPROVED.\n\n` +
@@ -65,70 +68,67 @@ const messageText =
     `+61 420988668 (Regent Park)\n\n` +
     `We look forward to seeing you soon!`;
 
-  // 3. URL Encoding for clean delivery
   const encodedMessage = encodeURIComponent(messageText);
-  window.open(`https://wa.me/${finalPhone}?text=${encodedMessage}`, '_blank');
+
+  window.open(`https://wa.me/${finalPhone}?text=${encodedMessage}`, "_blank");
 };
 
-const handleToggleStatus = async (id: string, currentStatus: string) => {
-  const newStatus = currentStatus === "Confirmed" ? "pending" : "confirmed";
-  
-  setLoadingId(id);
+  const handleToggleStatus = async (id: string, currentStatus: string) => {
+    const newStatus = currentStatus === "Confirmed" ? "pending" : "confirmed";
 
-  const toastId = toast.loading("Updating booking status...");
+    setLoadingId(id);
 
-  try {
-    const res = await API.post(
-      `/api/booking/update-booking-status/${id}`,
-      { status: newStatus }
-    );
+    const toastId = toast.loading("Updating booking status...");
 
-    if (res.status === 200) {
-      // 3. Update the existing loading toast to a success toast
+    try {
+      const res = await API.post(
+        `/api/booking/update-booking-status/${id}`,
+        { status: newStatus }
+      );
+
+      if (res.status === 200) {
+        // 3. Update the existing loading toast to a success toast
+        toast.update(toastId, {
+          render: `Booking ${newStatus === 'confirmed' ? 'Confirmed' : 'set to Pending'}! ✅`,
+          type: "success",
+          isLoading: false,
+          autoClose: 3000, // Toast will disappear after 3 seconds
+        });
+
+        fetchDashboardData(); // Refresh your list
+      }
+    } catch (error: any) {
+      // 4. Update the loading toast to an error toast
+      const errorMessage = error.response?.data?.message || "Failed to update status ❌";
+
       toast.update(toastId, {
-        render: `Booking ${newStatus === 'confirmed' ? 'Confirmed' : 'set to Pending'}! ✅`,
-        type: "success",
+        render: errorMessage,
+        type: "error",
         isLoading: false,
-        autoClose: 3000, // Toast will disappear after 3 seconds
+        autoClose: 3000,
       });
 
-      fetchDashboardData(); // Refresh your list
+      console.error("Status Update Error:", error);
+    } finally {
+      // 5. Always stop the individual row loader (whether success or fail)
+      setLoadingId(null);
     }
-  } catch (error: any) {
-    // 4. Update the loading toast to an error toast
-    const errorMessage = error.response?.data?.message || "Failed to update status ❌";
-    
-    toast.update(toastId, {
-      render: errorMessage,
-      type: "error",
-      isLoading: false,
-      autoClose: 3000,
-    });
-    
-    console.error("Status Update Error:", error);
-  } finally {
-    // 5. Always stop the individual row loader (whether success or fail)
-    setLoadingId(null);
-  }
-};
+  };
   const fetchDashboardData = useCallback(async () => {
     setLoading(true);
     try {
-      // Added pagination params to the API call
       const [recentRes, topRes, statsRes] = await Promise.allSettled([
         API.get(`/api/recent-bookings?page=${currentPage}&limit=${itemsPerPage}`),
         API.get("/api/top-bookings"),
         API.get("/api/dashboard-stats"),
       ]);
-
       if (statsRes.status === "fulfilled") {
-        setStats(statsRes.value?.data?.data || []);
+        setStats(statsRes.value?.data || []);
       }
 
       if (recentRes.status === "fulfilled") {
-        const recentData = recentRes.value?.data;
+        const recentData = recentRes.value;
 
-        // Update pagination from API response if available
         if (recentData?.pagination) {
           setTotalPages(recentData.pagination.totalPages);
         }
@@ -155,7 +155,7 @@ const handleToggleStatus = async (id: string, currentStatus: string) => {
       }
 
       if (topRes.status === "fulfilled") {
-        const topData = topRes.value?.data;
+        const topData = topRes.value;
         const formattedTop = topData?.data?.map((item: any) => ({
           name: item._id || "Service",
           bookings: item.totalBookings || 0,
@@ -244,16 +244,7 @@ const handleToggleStatus = async (id: string, currentStatus: string) => {
                     </Badge>
 
                     <div className="flex items-center gap-1">
-                      {/* WhatsApp Action */}
-                      {/* <Button
-                        variant="ghost"
-                        size="icon"
-                        className="h-8 w-8 text-emerald-600 hover:text-emerald-700 hover:bg-emerald-50"
-                        onClick={() => handleSendWhatsApp(booking)}
-                        title="Send WhatsApp"
-                      >
-                        <MessageCircle className="w-4 h-4" />
-                      </Button> */}
+
 
                       <div className="flex items-center gap-2">
                         <div className="relative flex items-center">
@@ -283,7 +274,17 @@ const handleToggleStatus = async (id: string, currentStatus: string) => {
                         </Button>
                       </div>
 
-                      <Button variant="ghost" size="icon" className="h-8 w-8"><MoreHorizontal className="w-4 h-4" /></Button>
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        className="h-8 w-8 text-blue-600 hover:text-blue-700"
+                        onClick={() => {
+                          setSelectedBooking(booking);
+                          setIsModalOpen(true);
+                        }}
+                      >
+                        <Eye className="w-4 h-4" />
+                      </Button>
                     </div>
                   </div>
                 </div>
@@ -313,6 +314,9 @@ const handleToggleStatus = async (id: string, currentStatus: string) => {
           </CardContent>
         </Card>
       </div>
+      {isModalOpen && selectedBooking && (
+ <ViewBookingDetails selectedBooking={selectedBooking} setIsModalOpen={setIsModalOpen} handleWhatsapp={handleSendWhatsApp}/>
+)}
     </div>
   );
 };
