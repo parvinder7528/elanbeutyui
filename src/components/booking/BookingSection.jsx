@@ -81,7 +81,6 @@ const BookingSection = () => {
   const validate = () => {
     const newErrors = {};
     if (!formData.fullName) newErrors.fullName = "Full Name is required";
-    if (!formData.email) newErrors.email = "Email is required";
     if (!formData.phone) newErrors.phone = "Phone is required";
     if (!formData.location) newErrors.location = "Location is required";
     if (!formData.date) newErrors.date = "Date is required";
