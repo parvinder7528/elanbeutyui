@@ -1,21 +1,21 @@
 import { X, Calendar, User, Briefcase, Clock, Activity, Smartphone } from 'lucide-react'; // Smartphone icon add kiya
 
 const ViewBookingDetails = ({ selectedBooking, setIsModalOpen, handleWhatsapp }) => {
-    console.log("Selected Booking:", selectedBooking);
+    console.log("Selected Booking:", selectedBooking); 
 
     return (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
             {/* Backdrop with Blur */}
-            <div
-                className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity"
+            <div 
+                className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity" 
                 onClick={() => setIsModalOpen(false)}
             />
 
             {/* Modal Content */}
             <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden transform transition-all animate-in fade-in zoom-in duration-200">
-
+                
                 {/* Header with Gradient */}
-                <div className="bg-gradient-to-r from-indigo-600 to-purple-700 px-6 py-4 flex justify-between items-center">
+                <div className="px-6 py-4 flex justify-between items-center" style={{background:"#5d00d1"}}>
                     <h2 className="text-white font-semibold text-lg flex items-center gap-2">
                         <Calendar className="w-5 h-5" />
                         Booking Details
@@ -31,7 +31,7 @@ const ViewBookingDetails = ({ selectedBooking, setIsModalOpen, handleWhatsapp })
                 {/* Body */}
                 <div className="p-6">
                     <div className="grid grid-cols-1 gap-5">
-
+                        
                         {/* Client & Phone Section */}
                         <div className="flex items-start gap-4 bg-indigo-50/50 p-4 rounded-xl border border-indigo-100">
                             <div className="p-2.5 bg-white rounded-lg shadow-sm">
@@ -40,7 +40,7 @@ const ViewBookingDetails = ({ selectedBooking, setIsModalOpen, handleWhatsapp })
                             <div className="flex-1">
                                 <p className="text-[10px] font-bold text-indigo-400 uppercase tracking-widest">Customer Info</p>
                                 <p className="text-slate-800 font-bold text-base leading-tight">{selectedBooking.client}</p>
-
+                                
                                 {/* Phone Number Display */}
                                 <div className="flex items-center gap-2 mt-1.5 text-indigo-700">
                                     <Smartphone className="w-3.5 h-3.5" />
@@ -88,10 +88,11 @@ const ViewBookingDetails = ({ selectedBooking, setIsModalOpen, handleWhatsapp })
                                 <Activity className="w-4 h-4 text-slate-400" />
                                 <span className="text-sm text-slate-500">Current Status</span>
                             </div>
-                            <span className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-tighter ${selectedBooking.status === 'Confirmed'
-                                    ? 'bg-green-100 text-green-700 border border-green-200'
+                            <span className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-tighter ${
+                                selectedBooking.status === 'Confirmed' 
+                                    ? 'bg-green-100 text-green-700 border border-green-200' 
                                     : 'bg-amber-100 text-amber-700 border border-amber-200'
-                                }`}>
+                            }`}>
                                 {selectedBooking.status}
                             </span>
                         </div>
@@ -100,22 +101,25 @@ const ViewBookingDetails = ({ selectedBooking, setIsModalOpen, handleWhatsapp })
                 </div>
 
                 {/* Footer */}
-                <div className="bg-slate-50 px-6 py-4 flex justify-end gap-3">
-                    <button
-                        onClick={() => setIsModalOpen(false)}
-                        className="px-5 py-2 text-sm font-bold text-slate-600 hover:bg-slate-200 rounded-lg transition-colors"
-                    >
-                        Dismiss
-                    </button>
-                    <button  
-  onClick={() => handleWhatsapp(selectedBooking)}
-  style={{ backgroundColor: '#6b30d7' }} // 🔥 Force background color
-  className="px-5 py-2 text-sm font-bold text-white rounded-lg transition-all active:scale-95 flex items-center gap-2"
->
-  <Smartphone className="w-4 h-4" />
-  Send WhatsApp
-</button>
-                </div>
+               <div className="bg-slate-50 px-8 py-6 flex justify-end gap-3 border-t border-slate-100">
+    <button
+        onClick={() => setIsModalOpen(false)}
+        className="px-6 py-2.5 text-sm font-bold text-slate-500 bg-slate-200/50 hover:bg-slate-200 rounded-xl transition-colors"
+    >
+        Dismiss
+    </button>
+    
+    <button
+        onClick={() => handleWhatsapp(selectedBooking)}
+        /* Inline style isliye taaki agar Tailwind fail ho toh bhi color dikhe */
+        style={{ backgroundColor: '#16a34a', color: 'white' }} 
+        /* !bg-green-600 important flag hai Tailwind ke liye */
+        className="px-6 py-2.5 text-sm font-bold !text-white !bg-green-600 hover:!bg-green-700 rounded-xl shadow-lg shadow-green-100 transition-all active:scale-95 flex items-center gap-2 border-none outline-none"
+    >
+        <Smartphone className="w-4 h-4 text-white" />
+        <span className="text-white">Send WhatsApp</span>
+    </button>
+</div>
 
             </div>
         </div>
